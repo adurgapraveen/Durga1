@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-4">
+    <h2 class="text-center">Python Quiz</h2>
+
+    <form id="quiz">
+
+        <p>1. Python was developed by?</p>
+        <input type="radio" name="q1" value="1"> Guido van Rossum<br>
+        <input type="radio" name="q1" value="0"> James Gosling<br>
+
+        <p>2. Python is a?</p>
+        <input type="radio" name="q2" value="1"> High-Level Language<br>
+        <input type="radio" name="q2" value="0"> Assembly Language<br>
+
+        <p>3. Extension of Python file?</p>
+        <input type="radio" name="q3" value="1"> .py<br>
+        <input type="radio" name="q3" value="0"> .python<br>
+
+        <p>4. Keyword to define a function?</p>
+        <input type="radio" name="q4" value="1"> def<br>
+        <input type="radio" name="q4" value="0"> function<br>
+
+        <p>5. List is represented using?</p>
+        <input type="radio" name="q5" value="1"> []<br>
+        <input type="radio" name="q5" value="0"> ()<br>
+
+        <p>6. Tuple is represented using?</p>
+        <input type="radio" name="q6" value="1"> ()<br>
+        <input type="radio" name="q6" value="0"> {}<br>
+
+        <p>7. Dictionary is represented using?</p>
+        <input type="radio" name="q7" value="1"> {}<br>
+        <input type="radio" name="q7" value="0"> []<br>
+
+        <p>8. Python is?</p>
+        <input type="radio" name="q8" value="1"> Interpreted Language<br>
+        <input type="radio" name="q8" value="0"> Compiled Only<br>
+
+        <p>9. Single-line comment symbol?</p>
+        <input type="radio" name="q9" value="1"> #<br>
+        <input type="radio" name="q9" value="0"> //<br>
+
+        <p>10. Python supports?</p>
+        <input type="radio" name="q10" value="1"> OOP<br>
+        <input type="radio" name="q10" value="0"> Networking Only<br><br>
+
+        <button type="button" class="btn btn-success" onclick="result()">Submit</button>
+    </form>
+
+    <h3 id="score" class="mt-3"></h3>
+</div>
+
+<script>
+function result() {
+    let score = 0;
+
+    for(let i=1;i<=10;i++) {
+        let ans = document.querySelector('input[name="q'+i+'"]:checked');
+        if(ans) score += parseInt(ans.value);
+    }
+
+    document.getElementById("score").innerHTML =
+    "Your Score: " + score + "/10";
+}
+</script>
+
+</body>
+</html>
